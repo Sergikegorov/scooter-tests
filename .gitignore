@@ -1,0 +1,11 @@
+﻿.pytest/
+venv/
+.idea/
+# ignore .pytest_cache
+.pytest_cache/
+# ignore _pycache_/
+*.pyc
+# ignore file_name.txt
+file_name.txt
+# ignore .doc
+*.doc

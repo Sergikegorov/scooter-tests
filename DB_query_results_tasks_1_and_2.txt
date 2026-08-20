@@ -1,0 +1,43 @@
+# Результаты первого запроса (Задание 1)
+
+HINT:  Perhaps you meant to reference the column "Orders.inDelivery".
+scooter_rent=# SELECT
+scooter_rent-#   "Couriers".login,
+scooter_rent-#   COUNT("Orders".id) AS orders_in_delivery
+scooter_rent-# FROM "Couriers"
+scooter_rent-# LEFT JOIN "Orders" ON "Couriers".id = "Orders"."courierId"
+scooter_rent-# WHERE "Orders"."inDelivery" = true
+scooter_rent-# GROUP BY "Couriers".login;
+ login  | orders_in_delivery
+--------+--------------------
+ other  |                  4
+ sergei |                  8
+(2 rows)
+
+# Результаты второго запроса (задание 2)
+scooter_rent=# SELECT
+scooter_rent-#   id AS tracker,
+scooter_rent-#   CASE
+scooter_rent-#     WHEN finished = true THEN 2
+scooter_rent-#     WHEN cancelled = true THEN -1
+scooter_rent-#     WHEN "inDelivery" = true THEN 1
+scooter_rent-#     ELSE 0
+scooter_rent-#   END AS status
+scooter_rent-# FROM "Orders";
+ tracker | status
+---------+--------
+       3 |     -1
+       4 |     -1
+       6 |      1
+       7 |      1
+       9 |      1
+      10 |      1
+       1 |      2
+       2 |      2
+      11 |      2
+      12 |      2
+      13 |      2
+      14 |      2
+       5 |      2
+       8 |      2
+(14 rows)

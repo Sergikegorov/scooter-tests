@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# Егоров Сергей 46 когорта диплом автотесты самокат
 
 import pytest
 import sender_stand_request

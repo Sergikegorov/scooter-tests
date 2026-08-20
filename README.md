@@ -37,3 +37,10 @@ pip install requests pytest
 bash
 python -m pytest create_order_test.py -v
 
+# Работа с базой данных
+
+задание 1
+- indelivery.sql
+задание 2
+- tracker.sql
+
